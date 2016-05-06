@@ -9,12 +9,19 @@ maybe_make_cache_dir();
 $networks = get_data();
 $networks = $alphred->filter( $networks, $query, 'ssid' );
 
+if ( 'light' === $alphred->theme_background() ) {
+    $icon = __DIR__ . '/icons/wifi-dark.png';
+} else {
+    $icon = __DIR__ . '/icons/wifi-light.png';
+}
+
 foreach ( $networks as $network ) :
 	$alphred->add_result([
-		'title'        => $network['ssid'],
-		'subtitle'     => "Channel {$network['channel']} | Noise {$network['noise']} | BSSID {$network['bssid']}",
-		'valid'        => true,
-		'arg'          => $network['ssid'],
+		'title'    => $network['ssid'],
+		'subtitle' => "Channel {$network['channel']} | Noise {$network['noise']} | BSSID {$network['bssid']}",
+		'valid'    => true,
+		'arg'      => $network['ssid'],
+		'icon'     => $icon,
 	]);
 endforeach;
 

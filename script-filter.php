@@ -18,12 +18,28 @@ if ( Network::get_wifi_power() ) {
 	$title = 'WiFi is off.';
 }
 
+if ( 'light' === $alphred->theme_background() ) {
+    $wifi_icon = __DIR__ . '/icons/wifi-dark.png';
+} else {
+    $wifi_icon = __DIR__ . '/icons/wifi-light.png';
+}
+
+if ( 'light' === $alphred->theme_background() ) {
+    $info_icon = __DIR__ . '/icons/wifi-info-dark.png';
+} else {
+    $info_icon = __DIR__ . '/icons/wifi-info-light.png';
+}
+
 $alphred->add_result([
-	'title' => $title,
+	'title'    => $title,
 	'subtitle' => $subtitle,
+	'icon' => $info_icon,
 ]);
 $alphred->add_result([
 	'title' => 'Scan for and join WiFi Networks',
+	'icon'  => $wifi_icon,
+	'valid' => true,
+	'arg'   => '',
 ]);
 
 $alphred->console( print_r( Network::get_network_info(), true ), 4 );
