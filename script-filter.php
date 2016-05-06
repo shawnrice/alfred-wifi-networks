@@ -33,15 +33,14 @@ if ( 'light' === $alphred->theme_background() ) {
 $alphred->add_result([
 	'title'    => $title,
 	'subtitle' => $subtitle,
-	'icon' => $info_icon,
+	'icon'     => $info_icon,
+	'valid'    => false,
 ]);
 $alphred->add_result([
-	'title' => 'Scan for and join WiFi Networks',
-	'icon'  => $wifi_icon,
-	'valid' => true,
-	'arg'   => '',
+	'title'    => 'Scan for and join WiFi Networks',
+	'icon'     => $wifi_icon,
+	'valid'    => true,
+	'arg'      => '',
 ]);
-
-$alphred->console( print_r( Network::get_network_info(), true ), 4 );
 
 $alphred->to_xml();
