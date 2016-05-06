@@ -19,15 +19,15 @@ if ( Network::get_wifi_power() ) {
 }
 
 if ( 'light' === $alphred->theme_background() ) {
-    $wifi_icon = __DIR__ . '/icons/wifi-dark.png';
+		$wifi_icon = __DIR__ . '/icons/wifi-dark.png';
 } else {
-    $wifi_icon = __DIR__ . '/icons/wifi-light.png';
+		$wifi_icon = __DIR__ . '/icons/wifi-light.png';
 }
 
 if ( 'light' === $alphred->theme_background() ) {
-    $info_icon = __DIR__ . '/icons/wifi-info-dark.png';
+		$info_icon = __DIR__ . '/icons/wifi-info-dark.png';
 } else {
-    $info_icon = __DIR__ . '/icons/wifi-info-light.png';
+		$info_icon = __DIR__ . '/icons/wifi-info-light.png';
 }
 
 $alphred->add_result([

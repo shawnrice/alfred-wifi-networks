@@ -10,9 +10,9 @@ $networks = get_data();
 $networks = $alphred->filter( $networks, $query, 'ssid' );
 
 if ( 'light' === $alphred->theme_background() ) {
-    $icon = __DIR__ . '/icons/wifi-dark.png';
+	$icon = __DIR__ . '/icons/wifi-dark.png';
 } else {
-    $icon = __DIR__ . '/icons/wifi-light.png';
+	$icon = __DIR__ . '/icons/wifi-light.png';
 }
 
 foreach ( $networks as $network ) :
