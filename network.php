@@ -146,8 +146,10 @@ class Network {
 		// Scan and grab XML, unforunately as a plist
 		$cmd = self::find_airport() . ' --scan --xml';
 		exec( $cmd, $networks );
-		// Push it all back into a string
-		$network_data = implode( "\n", $networks );
+		// Push it all back into a string and encode to utf8 so that DOMDocument (which CFPropertyList
+		// uses) will be less likely to error out.
+		$network_data = utf8_encode( implode( "\n", $networks ) );
+
 		// Initialize a container
 		$networks = [];
 
